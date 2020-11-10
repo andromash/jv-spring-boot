@@ -16,7 +16,7 @@ public class SystemFileReader implements ReaderService {
         try (BufferedReader reader = new BufferedReader(new FileReader(dataSource))) {
             return reader.lines().collect(Collectors.toList());
         } catch (IOException e) {
-            throw new RuntimeException("Can not read data from file with path " + dataSource, e);
+            throw new RuntimeException("Cannot read data from file with path " + dataSource, e);
         }
     }
 }
