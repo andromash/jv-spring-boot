@@ -20,8 +20,8 @@ class SystemFileReaderTest {
 
     @Test
     public void readFileOk() {
-        List<String> expected = List.of("1,test,superb,no logic here, just reading",
-                "2,test2,super,no logic here, just reading");
+        List<String> expected = List.of("1, test, superb, no logic here, just reading",
+                "2, test2, super, no logic here, just reading");
         List<String> result = readerService.readData(PATH + FILE_NAME);
         Assert.assertEquals(expected, result);
     }
