@@ -10,9 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 class SystemFileReaderTest {
-    private static final String PATH = "src/main/resources/test.csv";
-    private static final String EMPTY_FILE_PATH = "src/main/resources/emptyfile.csv";
-    private static final String WRONG_PATH = "src/main/resources/magic.csv";
+    private static final String PATH = "src/test/resources";
+    private static final String FILE_NAME = "/test.csv";
+    private static final String EMPTY_FILE_NAME = "/emptyfile.csv";
+    private static final String WRONG_PATH = "/magic.csv";
 
     @Autowired
     private ReaderService readerService;
@@ -21,13 +22,13 @@ class SystemFileReaderTest {
     public void readFileOk() {
         List<String> expected = List.of("1,test,superb,no logic here, just reading",
                 "2,test2,super,no logic here, just reading");
-        List<String> result = readerService.readData(PATH);
+        List<String> result = readerService.readData(PATH + FILE_NAME);
         Assert.assertEquals(expected, result);
     }
 
     @Test
     public void readEmptyFile() {
-        List<String> result = readerService.readData(EMPTY_FILE_PATH);
+        List<String> result = readerService.readData(PATH + EMPTY_FILE_NAME);
         Assert.assertEquals(List.of(), result);
     }
 
