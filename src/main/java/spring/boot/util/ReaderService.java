@@ -1,4 +1,4 @@
-package spring.boot.service;
+package spring.boot.util;
 
 import java.util.List;
 
