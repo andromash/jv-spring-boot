@@ -26,7 +26,7 @@ public class ReviewCsvParser implements CsvParser<ReviewDto> {
             reviewDto.setText(parsedLine[9].trim());
             return reviewDto;
         } catch (IOException e) {
-            throw new RuntimeException("Cannot parser line " + csvLine, e);
+            throw new RuntimeException("Cannot parse the line " + csvLine, e);
         }
     }
 }
